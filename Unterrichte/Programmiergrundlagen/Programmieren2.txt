@@ -1,0 +1,25 @@
+Kommentare
+	// einzeiliger Kommentare
+	/* 
+	mehr
+	zeiliger
+	Kommentar
+	*/ 
+	Funktionen sollten so benannt sein, dass man mit einem Kommentar nicht erläutern muss, was diese tut
+	nicht zum auskommentieren vom Code gedacht
+	Beschreiben warum eine Funktion das macht
+	Eventuell beschreiben was wovon abhängt
+	Blöcke von Variableninitialisierungen ggf. zusammenfassen
+Arrays
+	Mehrere Objekte des gleichen Typs zusammengefasst
+	Die einzelnen Elemente werden über ihre Positionsnummer (Index) angesprochen.
+	Der Index ist eine ganze Zahl von 0 bis Elementanzahl - 1
+		Datentyp[AnzahlDerElemente] name;
+	Beispiel:
+		int[] vector = new int[3]{3, 5, 0};
+		int[,] map = new int[3,3]{{0,2,3},{0,4,3}, {7,3,4}};
+		
+		Zugriff auf die Elemente
+			name[Index]
+			vector[2] gibt 0 zurück
+			vector[0,2] gibt 
