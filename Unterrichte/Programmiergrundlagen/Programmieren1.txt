@@ -1,0 +1,137 @@
+Programmiergrundlagen
+
+Algorithmus
+	Wie ein Rezept!
+	Eingabewerte/Ausgabewerte
+	Eindeutigkeit
+	Endlichkeit
+	Vollständigkeit
+	Korrektheit
+	
+Variablen
+	Werden im Programm für Verwendung von Werten benötigt
+	Enthalten einen Wert
+	Der Wert kann verändert Werden
+	Speicherplatz einer bestimmten Göße und eines bestimmten Datentyps
+	Kann über ihren Namen(Bezeichner) angesprochen werden
+
+Konstanten
+	Variable, bei der der Wert einmal zugewiesen wird und nicht mehr 
+	verändert werden kann
+
+Datentypen
+	beeinflusst den Speicherplatz, welcher für eine Variable reserviert wird
+	zB int, float, Ei
+	hat vordefinierte Operationen
+	
+Initialisierung
+	Datentyp name = Wert;
+	int number = 5;
+	
+Ausdrücke
+	3+4+x*z wird interpretiert als 3+4+(x*z)
+	linksassoziativ:
+		3-4-x wird interpretiert als (3-4)-x
+	rechtsassoziativ:
+		i = y = z wird interpretiert als i = (y = z)
+	
+Typkonversion
+	Automatische Konversion
+		Vorgang in dem intern komplexe Konversionsregeln angewendet werden
+		So gut es geht vermeiden!
+		Beispiel:
+			int -> float
+	Cast
+		Typkonversion (cast) durch Präfixoperator durchführen
+				(Typ) Ausdruck
+		Häufig notwendig, da keine automatische Konversion möglich ist
+		Beispiel:
+			Ei x;
+			Spiegelei y;
+			x + (Ei)y
+	Vorsicht vor Informationsverlust!
+		float x = 5.6;
+		x -> int
+		5.6 -> 5
+Anweisungsblock
+	mehrere Anweisungen zusammengefasst zwischen geschweiften Klammern
+	Beispiel:
+		{
+			Anweisung1;
+			Anweisung2;
+			Anweisung3;
+		}
+Bedingte Anweisungen
+	Bestimmt welche Anweisung/en ausgeführt werden/wird
+	Beispiel:
+		if(ofen.Vorgeheizt()){
+			teig.Rein();
+		}
+		else{
+			ofen.Vorheizen();
+		}
+	Logische Audrücke
+		Beispiel:
+			5 < 3 
+			Rückgabewert: false
+		Logische Operatoren
+			< kleiner
+			> größer
+			== logisches gleich
+			<= kleiner/gleich
+			>= größer/gleich
+			!= nicht gleich
+		Verknüpfungen
+			&& und
+			|| oder
+			Beispiel:
+				5 < 7 && 3 > 7
+				Rückgabewert: false
+				5 < 7 || 3 > 7
+				Rückgabewert: true
+	Verschachtelungen
+		if in einer if in einer if in einer if....
+		Beispiel:
+			if(true){
+				if(true){
+					...
+				}
+			}
+			else{
+			}
+	Mehrwegverzweigung
+		int caseSwitch = 2;
+		switch (caseSwitch)
+		{
+			case 1: 
+				Console.WriteLine("Case 1");
+				break;
+			case 5:
+				Console.WriteLine("Case 5");
+				break;
+			default:
+				Console.WriteLine("Default case");
+				break;
+		}
+Schleifen
+	while Schleife
+		while(logischerAusdruck)
+		{
+			...
+		}
+	do while Schleife
+		do
+		{
+			...
+		}
+		while(logischerAusdruck)
+	for Schleife
+		for(int i = 0; i <= 6; i++)
+		{
+			...
+		}
+	foreach Schleife
+		foreach(int i in sammlungVonInts)
+		{
+			Anweisungen für jeden Durchgang/jedes Element in der Sammlung
+		}
