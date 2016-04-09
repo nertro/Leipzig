@@ -22,4 +22,120 @@ Arrays
 		Zugriff auf die Elemente
 			name[Index]
 			vector[2] gibt 0 zurück
-			vector[0,2] gibt 
+			vector[0,2] gibt 3 zurück
+Geltungsbereich
+	lokal
+		Variablen, welche innerhalb eines Anweisungsblocks definiert werden sind nur innerhalb dieses Blocks gültig
+		Beispiel:
+			void A()
+			{
+				float z;
+				hier ist z gültig
+			}
+			
+			hier ist z nicht gültig
+			
+			void B()
+			{
+				hier ist z nicht gültig
+			}
+	global
+		Variablen, welche außerhalb sämtlicher Anweisungsblöcke definiert sind. Sind überall gültig
+		Beispiel:
+			float z;
+			void A()
+			{
+				hier ist z gültig
+			}
+			
+			hier ist z gültig
+			
+			void B()
+			{
+				hier ist z gültig
+			}
+Funktionen
+	Zusammenfassung von Anweisungen
+	aufrufbar
+	hat immer einen Rückgabewert
+	kann Eingabewerte annehmen -> Parameter
+	return; Gibt den Rückgabewert zurück. Nachfolgende Anweisungen innerhalb der Funktion werden nicht mehr ausgeführt
+				DatentypDesRückgabewerts Name(Datentyp Parameter1, Datentyp Parameter2)
+				{}
+	void wird als Datentyp angegeben, wenn die Funktion nichts zurückgibt
+	wird void angegeben, so wird kein return benötigt
+	Rekursion
+		direkt
+			eine Funktion ruft sich selbst wieder auf
+		indirekt
+			eine Funktion ruft eine andere Funktion auf, welche diese Funktion wieder aufruft
+	Beispiel1:
+		int Sqrt(int x)
+		{
+			int b = x*x;
+			return b;
+		}
+	Beispie2:
+		void BackDenKuchen(Kuchen kuchen)
+		{
+			kuchen.Fertig = true;
+		}
+Enumerator/Aufzählungstypen
+	Enthält Bezeichner, welche einen konstanten integer Wert enthalten
+	der automatisch zugeordnete Wert beginnt bei 0 und zählt aufwärts
+	die Werte können auch manuell zugewiesen werden
+	durch einen int-Cast kann man den Wert über den bezeichner erlangen
+	Beispiel1:
+		enum Days{Mo, Di, Mi, Do, Fr}
+		automatisch zugewiesene Werte sind dann Mo = 0, Di = 1 usw.
+	Beispie2 manuelle Zuweisung von Werten:
+		enum Weapons{Pistole = 10, Fist = 2, PlushUnicorn = 9001 }
+	Beispiel3 enum verwenden:
+		Weapons myWeapon = Weapons.PlushUnicorn; <- Initialisierung einer Variable
+		
+		if(myWeapon == Weapons.PlushUnicorn) <- Abfrage was für eine Waffe ich habe
+		{
+			SpawnFancyParticles();
+		}
+		
+		enemy.Health -= (int)myWeapon <- int Wert des Bezeichners benutzen. Es werden 9001 abgezogen, da ich das PlushUnicorn habe
+Spezielle Operatoren
+	Inkrement++ und Dekrement--
+		x = x + 1 ist das gleiche wie x++
+		Präfix
+			der Wert wird erst geändert und dann weiter verwendet
+			++x
+			--x
+		Suffix
+			der Ausgangswert wird erst verwendet und dann verändert
+			x++
+			x--
+	Zuweisungsoperatoren
+		+= -= *= /=
+		x = x + 5 ist das gleiche wie x += 5
+		y = y / 10 ist das gleiche wie y /= 10
+		usw.
+	Sequenzoperator ,
+		dient zum Aufzählen
+		Beispiel1:
+			int i = 0, z = 2, y = 5;
+		Beispie2:
+			void HeizDenOfen(Ofen ofen, float ausgangstemperatur)
+			{}
+	Bedingte Auswertung
+		kürzere Schreibweise für if -else
+		kann jeweils nur eine Anweisung und keinen Anweisungsblock ausführen
+				LogischerAusdruck ? Ausdruck1 : Ausdruck2;
+		Beispiel:
+			bool istDerKuchenFertig
+			
+			istDerKuchenFertig ? IssDenKuchen() : BackDenKuchen();
+Klassen
+	Fassen Funktionen zusammen
+	Machen das Programm erweiterbar und übersichtlicher
+	Können ihren Inhalt an andere Klassen vererben
+	Objekte einer Klasse können mit dem new Keyword erstellt werden
+	Objekte enthalten alle Funktionen und Variablen ihrer Klasse
+	eine Klasse ist sozusagen ein Bauplan für eine Funktion
+	der Konstruktor wird aufgerufen wenn ein Objekt erstellt wird und kann Parameter annehmen
+	Beispiele findet ihr in dem Code zum GameOfLife Projekt
